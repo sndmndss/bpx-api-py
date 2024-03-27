@@ -14,7 +14,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x' # Specify the Python version you need
+        python-version: '3.10'
 
     - name: Install dependencies
       run: |
@@ -30,6 +30,6 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/html # The directory where Sphinx output is located
-        keep_files: false # This will remove all files in the publishing source branch before copying the new files
-        allow_empty_commit: false # This will prevent the action from making a commit if there are no changes to the documentation
+        publish_dir: ./_build/html
+        keep_files: false
+        allow_empty_commit: false
