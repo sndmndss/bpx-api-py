@@ -16,8 +16,7 @@ jobs:
           pip install sphinx sphinx_rtd_theme myst_parser
       - name: Listing
         run: | 
-          ls -R
-          ls .
+          pip install -r requirements.txt
       - name: Sphinx build
         run: |
           sphinx-build -v $GITHUB_WORKSPACE/docs $GITHUB_WORKSPACE/_build
