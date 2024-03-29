@@ -235,6 +235,9 @@ class BpxClient:
         :return: Status of executed order.
         :rtype: :class:`dict`
 
+        .. warning::
+            Order book is in limit-only mode. That means you cannot use Market Bid or Ask orders.
+
         """
 
         params = {
@@ -244,8 +247,9 @@ class BpxClient:
             'quantity': quantity,
             'selfTradePrevention': selfTradePrevention,
         }
-        if price:
-            params['price'] = price
+        if orderType != "Market":
+            if price:
+                params['price'] = price
         if triggerPrice:
             params['triggerPrice'] = triggerPrice
         if quoteQuantity:
