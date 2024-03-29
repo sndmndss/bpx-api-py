@@ -17,6 +17,7 @@ jobs:
       - name: Listing
         run: | 
           ls -R
+          ls .
       - name: Sphinx build
         run: |
           sphinx-build -v $GITHUB_WORKSPACE/docs $GITHUB_WORKSPACE/_build
